@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 // Centralized Axios instance using Vite environment variable
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8081/api';
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'https://student-management-yyfw.onrender.com/api';
 
 const api = axios.create({
   baseURL: API_BASE_URL,
