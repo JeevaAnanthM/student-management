@@ -1,0 +1,250 @@
+:root {
+  --font-heading: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --font-body: 'Inter', system-ui, -apple-system, sans-serif;
+
+  /* Student theme colors */
+  --primary: #4f46e5;
+  --primary-hover: #4338ca;
+  --primary-light: #eef2ff;
+  --primary-glow: rgba(79, 70, 229, 0.25);
+
+  /* Admin theme colors */
+  --admin-dark: #0f172a;
+  --admin-slate: #1e293b;
+  --admin-accent: #38bdf8;
+  --admin-gold: #f59e0b;
+
+  /* Neutral UI colors */
+  --bg-app: #f8fafc;
+  --card-bg: #ffffff;
+  --border-subtle: #e2e8f0;
+  --text-main: #0f172a;
+  --text-muted: #64748b;
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--bg-app);
+  color: var(--text-main);
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+/* Background Gradients for Auth Pages */
+.auth-page-wrapper {
+  min-height: calc(100vh - 72px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2.5rem 1rem;
+}
+
+.student-auth-bg {
+  background: radial-gradient(circle at 10% 20%, rgba(99, 102, 241, 0.08) 0%, rgba(248, 250, 252, 1) 90%);
+}
+
+.admin-auth-bg {
+  background: radial-gradient(circle at 50% 10%, rgba(15, 23, 42, 0.98) 0%, rgba(30, 41, 59, 1) 100%);
+  color: #f1f5f9;
+}
+
+/* Auth Cards */
+.auth-card {
+  width: 100%;
+  max-width: 480px;
+  background: var(--card-bg);
+  border-radius: 1.25rem;
+  border: 1px solid var(--border-subtle);
+  box-shadow: var(--shadow-xl);
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.auth-card-admin {
+  background: rgba(30, 41, 59, 0.85);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #f8fafc;
+}
+
+/* Form Controls */
+.form-control, .form-select {
+  border-radius: 0.65rem;
+  padding: 0.72rem 1rem;
+  border: 1px solid var(--border-subtle);
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+}
+
+.form-control:focus, .form-select:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 4px var(--primary-glow);
+}
+
+.form-control-admin {
+  background-color: rgba(15, 23, 42, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: #ffffff;
+}
+
+.form-control-admin:focus {
+  background-color: rgba(15, 23, 42, 0.95);
+  border-color: var(--admin-accent);
+  color: #ffffff;
+  box-shadow: 0 0 0 4px rgba(56, 189, 248, 0.25);
+}
+
+.form-control-admin::placeholder {
+  color: #94a3b8;
+}
+
+/* Buttons */
+.btn-primary-gradient {
+  background: linear-gradient(135deg, #4f46e5 0%, #6366f1 100%);
+  color: white;
+  border: none;
+  font-weight: 600;
+  border-radius: 0.65rem;
+  padding: 0.75rem 1.5rem;
+  transition: all 0.2s ease;
+}
+
+.btn-primary-gradient:hover:not(:disabled) {
+  background: linear-gradient(135deg, #4338ca 0%, #4f46e5 100%);
+  color: white;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px var(--primary-glow);
+}
+
+.btn-admin-gradient {
+  background: linear-gradient(135deg, #0ea5e9 0%, #2563eb 100%);
+  color: white;
+  border: none;
+  font-weight: 600;
+  border-radius: 0.65rem;
+  padding: 0.75rem 1.5rem;
+  transition: all 0.2s ease;
+}
+
+.btn-admin-gradient:hover:not(:disabled) {
+  background: linear-gradient(135deg, #0284c7 0%, #1d4ed8 100%);
+  color: white;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(14, 165, 233, 0.4);
+}
+
+/* Brand Navbar */
+.app-navbar {
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--border-subtle);
+  background: rgba(255, 255, 255, 0.92);
+  transition: background-color 0.2s ease;
+}
+
+.app-navbar-admin {
+  background: rgba(15, 23, 42, 0.96);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Stat Cards */
+.stat-card {
+  background: var(--card-bg);
+  border-radius: 1rem;
+  border: 1px solid var(--border-subtle);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.stat-icon-wrapper {
+  width: 52px;
+  height: 52px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+}
+
+/* Tables */
+.custom-table {
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+.custom-table thead th {
+  background-color: #f1f5f9;
+  color: #475569;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 700;
+  padding: 0.9rem 1rem;
+  border-top: none;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.custom-table tbody tr {
+  transition: background-color 0.15s ease;
+}
+
+.custom-table tbody tr:hover {
+  background-color: #f8fafc;
+}
+
+.custom-table tbody td {
+  padding: 1rem;
+  vertical-align: middle;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+/* Badges */
+.badge-role-student {
+  background-color: #e0e7ff;
+  color: #3730a3;
+  font-weight: 600;
+  border-radius: 9999px;
+  padding: 0.35rem 0.85rem;
+}
+
+.badge-role-admin {
+  background-color: #fef3c7;
+  color: #92400e;
+  font-weight: 700;
+  border-radius: 9999px;
+  padding: 0.35rem 0.85rem;
+}
+
+/* Password Toggle Icon Button */
+.password-toggle-btn {
+  background: transparent;
+  border: none;
+  color: #94a3b8;
+  cursor: pointer;
+  padding: 0 0.5rem;
+}
+
+.password-toggle-btn:hover {
+  color: #475569;
+}
